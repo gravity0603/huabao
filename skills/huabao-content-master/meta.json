@@ -1,0 +1,79 @@
+{
+  "name": "huabao-content-master",
+  "industry": "华为画报锁屏内容策划",
+  "focus": "日常选题与生产决策",
+  "locale": "中文编辑，全球非日本对象",
+  "profile": "内容策划从业者",
+  "research_date": "2026-10-14",
+  "stage": "release-1.1.0",
+  "status": "maintained-in-huabao",
+  "scope": [
+    "素材发现",
+    "品类策略",
+    "标题竞争",
+    "原文证据",
+    "概念去重",
+    "写作",
+    "制作与审核交接",
+    "数据复盘口径"
+  ],
+  "publishing": "统一维护于gravity0603/huabao",
+  "boundary": "记录数只说明文件规模，不等于已完成新题去重或事实核验",
+  "source_count": 17,
+  "source_count_scope": "unique opened public URLs from 04/05/06; other tracks reuse",
+  "research_tracks": [
+    "01-figures.md",
+    "02-tools.md",
+    "03-workflows.md",
+    "04-canon.md",
+    "05-sources.md",
+    "06-glossary.md"
+  ],
+  "research_direction_approved": true,
+  "synthesis_date": "2026-10-14",
+  "synthesis_file": "references/synthesis.md",
+  "work_models": 3,
+  "model_scope": "local adapted heuristics; industry exclusivity not established",
+  "playbook_rules": 8,
+  "research_dimensions": 7,
+  "quality_benchmarks": 5,
+  "anti_patterns": 8,
+  "version": "1.1.0",
+  "synthesis_review": "user correction incorporated on 2026-10-14",
+  "image_owner": "user manual review",
+  "assistant_image_scope": "真实对象与标题事实一致性",
+  "quality_priority": [
+    "网感",
+    "吸睛",
+    "信息密度",
+    "真实兑现"
+  ],
+  "runtime_reference": "SKILL.md and focused references",
+  "cli": "Python read-only checker adapted for Windows; no bash/RPA dependency",
+  "sub_skills": "none: no supported figures or requested person distillation",
+  "quality_controls": {
+    "title_competition": "actual category CSV anchors -> mechanisms -> new objects -> three title cuts -> side-by-side final comparison",
+    "editorial_axes": [
+      "网感",
+      "具体好奇点",
+      "信息增量",
+      "真实兑现"
+    ],
+    "mechanical_validation": "14 regression cases passed; four CLI modes checked; official quick_validate passed",
+    "behavioral_validation": "real failed travel output inspected; independent category-style exercise and focused travel retest completed; four retained, no count filling",
+    "observed_limits": [
+      "limited offline exercise with learning effect",
+      "some candidates rejected for explanatory or unnatural phrasing",
+      "real user selection remains the quality benchmark"
+    ],
+    "followup": "2026-10-14 style rejection incorporated; weak output returns to drafting or object replacement",
+    "structure_validation": "official quick_validate passed after final edits",
+    "reference_reader_validation": "13 routes, original-first, fallback disclosure, duplicate title headers, multiline CSV and malformed header verified"
+  },
+  "last_updated": "2026-10-14",
+  "repository": "https://github.com/gravity0603/huabao",
+  "repository_path": "skills/huabao-content-master",
+  "reference_title_count": 682,
+  "reference_file_count": 12,
+  "reference_snapshot_date": "2026-10-14"
+}

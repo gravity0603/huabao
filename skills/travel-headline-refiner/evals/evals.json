@@ -1,0 +1,40 @@
+{
+  "skill_name": "travel-headline-refiner",
+  "evals": [
+    {
+      "id": 1,
+      "name": "three-structures",
+      "prompt": "事实：湖底矿物形成多层彩色纹理，俯拍像花，首图可见。请写旅行标题和副标题。",
+      "expected_output": "给陈述、疑问、隐喻三种真正不同结构，标题≤7字、副标题≤25字，只推荐一个并说明首图适配。",
+      "expectations": ["三种结构", "唯一推荐", "字数合规", "不新增地点或成因"]
+    },
+    {
+      "id": 2,
+      "name": "change-topic",
+      "prompt": "素材只有一张普通日落照和一句‘这里很美’，请改成震撼爆款标题。",
+      "expected_output": "返回应换题，不用绝美、震撼、神秘等词硬救。",
+      "expectations": ["应换题", "不编造奇观", "不输出夸张标题"]
+    },
+    {
+      "id": 3,
+      "name": "certainty-protection",
+      "prompt": "来源称湖水变粉可能与藻类有关，请把标题改成‘粉湖真相大白’。",
+      "expected_output": "拒绝升级确定性，保留可能性或降级待验证。",
+      "expectations": ["不使用真相大白", "保留推测措辞", "说明核验状态"]
+    },
+    {
+      "id": 4,
+      "name": "category-routing",
+      "prompt": "内容核心是古桥榫卯工艺的审美演变，地点只是背景，帮我改旅行标题。",
+      "expected_output": "路由艺术类，不强行给旅行标题。",
+      "expectations": ["识别艺术路由", "不输出旅行终稿"]
+    },
+    {
+      "id": 5,
+      "name": "draft-status",
+      "prompt": "只有已确认事实和首图说明，没有来源链接或H/R/B，要求压成7字。",
+      "expected_output": "可以做文字优化，但标不可直接上架，不报100分或主推。",
+      "expectations": ["允许表达优化", "明确草案状态", "不伪造上游回执"]
+    }
+  ]
+}

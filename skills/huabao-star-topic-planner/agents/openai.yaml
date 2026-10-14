@@ -1,0 +1,6 @@
+interface:
+  display_name: "华为画报明星选题"
+  short_description: "从可验证素材策划明星类锁屏新选题"
+  default_prompt: "Use $huabao-star-topic-planner to create source-verified Huawei magazine celebrity topic proposals."
+policy:
+  allow_implicit_invocation: true

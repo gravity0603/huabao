@@ -1,0 +1,151 @@
+{
+  "snapshot_date": "2026-10-13",
+  "source_directory": "D:\\yiyouliao working\\选题参考",
+  "files": [
+    {
+      "name": "体育.csv",
+      "bytes": 3604,
+      "sha256": "58ab762412109e3ab8a61f4b83020d228ef0a32485ae577486b6395ec0324f34",
+      "encoding": "utf-8-sig",
+      "csv_records": 36,
+      "headers": [
+        "月份",
+        "标题",
+        "副标题"
+      ]
+    },
+    {
+      "name": "动漫.csv",
+      "bytes": 5191,
+      "sha256": "8251b6e02fdadfd23b227a96c420bc8e53734be38a0d2563647ca8ce417c76b8",
+      "encoding": "utf-8-sig",
+      "csv_records": 46,
+      "headers": [
+        "月份",
+        "标题",
+        "副标题"
+      ]
+    },
+    {
+      "name": "动物 萌宠.csv",
+      "bytes": 4918,
+      "sha256": "d246ab9a2d5c87282c03817b7b3086ac717253769293150512bd8a1fdf73542c",
+      "encoding": "utf-8-sig",
+      "csv_records": 46,
+      "headers": [
+        "月份",
+        "标题",
+        "副标题",
+        ""
+      ]
+    },
+    {
+      "name": "座驾.csv",
+      "bytes": 4289,
+      "sha256": "788c2c31c0f8683a4ba1cecb0381de52b14756285a3b735a6066d74621a5e3b6",
+      "encoding": "utf-8-sig",
+      "csv_records": 41,
+      "headers": [
+        "月份",
+        "标题",
+        "副标题"
+      ]
+    },
+    {
+      "name": "影视.csv",
+      "bytes": 5238,
+      "sha256": "f158f6d2338b0f79f86c760e8ad14442ebab24f976cb69d22170564e7f0eed64",
+      "encoding": "utf-8-sig",
+      "csv_records": 46,
+      "headers": [
+        "月份",
+        "标题",
+        "副标题"
+      ]
+    },
+    {
+      "name": "插画.csv",
+      "bytes": 5080,
+      "sha256": "5ae9d52b08f8994c32304bee251fe0f483216892f9f3fd28199c720cd976f151",
+      "encoding": "utf-8-sig",
+      "csv_records": 46,
+      "headers": [
+        "月份",
+        "标题",
+        "副标题",
+        ""
+      ]
+    },
+    {
+      "name": "旅行类标题参考.csv",
+      "bytes": 2746,
+      "sha256": "b6c8e2a53a4a414d08b9355b7bf688a8dd924439ee92378de4777ac9f9376c82",
+      "encoding": "gb18030",
+      "csv_records": 62,
+      "headers": [
+        "标题",
+        "副标题",
+        "标题"
+      ]
+    },
+    {
+      "name": "旅行风光.csv",
+      "bytes": 5455,
+      "sha256": "324a98ce3e1ee2bc601117a7d5c993ea4dbb84dd0f38c8ccb92aaddb232a84f4",
+      "encoding": "utf-8-sig",
+      "csv_records": 51,
+      "headers": [
+        "月份",
+        "标题",
+        "副标题"
+      ]
+    },
+    {
+      "name": "明星.csv",
+      "bytes": 5474,
+      "sha256": "fb8ecf03ecbcb965c2c22b39824f667f5b1df462bbc6f09df601baa4f309a6c5",
+      "encoding": "utf-8-sig",
+      "csv_records": 51,
+      "headers": [
+        "月份",
+        "标题",
+        "副标题"
+      ]
+    },
+    {
+      "name": "明星类标题参考.csv",
+      "bytes": 13946,
+      "sha256": "a25b9b02f8784ce00b08e4927a5507f05a828791d87e61ce2effe6262d5507f2",
+      "encoding": "utf-8-sig",
+      "csv_records": 126,
+      "headers": [
+        "标题",
+        "副标题"
+      ]
+    },
+    {
+      "name": "科技.csv",
+      "bytes": 5077,
+      "sha256": "a22e0e740c4e1a56210150104406d8ea0b7c34a976118e9f9ec6e36a5d9be2a7",
+      "encoding": "utf-8-sig",
+      "csv_records": 46,
+      "headers": [
+        "月份",
+        "标题",
+        "副标题"
+      ]
+    },
+    {
+      "name": "艺术.csv",
+      "bytes": 4816,
+      "sha256": "8ae1bdc898461ead3f572c237fb44b90a129e6a5fbbf3c0c82d1d8f52b9374db",
+      "encoding": "utf-8-sig",
+      "csv_records": 46,
+      "headers": [
+        "月份",
+        "标题",
+        "副标题"
+      ]
+    }
+  ]
+}

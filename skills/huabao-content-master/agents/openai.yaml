@@ -1,0 +1,4 @@
+interface:
+  display_name: "华为画报内容策划 Master"
+  short_description: "以真实对象打磨有网感、吸睛且有信息密度的选题标题，图片由用户人工复核"
+  default_prompt: "使用 $huabao-content-master，先读我的素材与品类参考，策划有网感、吸睛且有信息密度的四项题卡，并核实真实对象与标题事实一致。"

@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-14",
+  "canonical_repository": "gravity0603/huabao",
+  "active_skill_count": 9,
+  "legacy_skill_count": 1,
+  "skills": [
+    {
+      "skill": "huabao-content-master",
+      "path": "skills/huabao-content-master",
+      "origin": "local-current"
+    },
+    {
+      "skill": "huabao-topic-studio",
+      "path": "skills/huabao-topic-studio",
+      "origin": "local-current"
+    },
+    {
+      "skill": "huabao-content-planner",
+      "path": "skills/huabao-content-planner",
+      "origin": "current-installed-and-published"
+    },
+    {
+      "skill": "huabao-exposure-stats",
+      "path": "skills/huabao-exposure-stats",
+      "origin": "current-installed-and-published"
+    },
+    {
+      "skill": "huabao-travel-content-planner",
+      "path": "skills/huabao-travel-content-planner",
+      "origin": "current-installed-and-published"
+    },
+    {
+      "skill": "travel-headline-refiner",
+      "path": "skills/travel-headline-refiner",
+      "origin": "local-current"
+    },
+    {
+      "skill": "huabao-star-topic-planner",
+      "path": "skills/huabao-star-topic-planner",
+      "origin": "current-installed-and-published"
+    },
+    {
+      "skill": "huabao-star-headline-refiner",
+      "path": "skills/huabao-star-headline-refiner",
+      "origin": "current-installed-and-published"
+    },
+    {
+      "skill": "weekly-intel-station",
+      "path": "skills/weekly-intel-station",
+      "origin": "current-installed-and-published"
+    },
+    {
+      "skill": "huabao-star-content-planner",
+      "path": "legacy/huabao-star-content-planner",
+      "origin": "published-legacy-v1.0.0"
+    }
+  ]
+}

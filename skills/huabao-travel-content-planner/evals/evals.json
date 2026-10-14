@@ -1,0 +1,150 @@
+{
+  "skill_name": "huabao-travel-content-planner",
+  "evals": [
+    {
+      "id": 1,
+      "name": "three-way-dedup-regression",
+      "prompt": "读取相对路径 evals/fixtures/materials-recent.csv、completed-titles.csv、recent-published.csv。按素材库新增时间倒序审核，输出可继续核验的候选和淘汰项，并给出概念指纹与三方去重结论。不得为同一概念族已出现两次的素材换标题后保留。",
+      "expected_output": "彩虹盐湖因概念族已出现两次而淘汰；其他两条只能进入待补核验，不能伪装成最终候选或主推。",
+      "files": [
+        "evals/fixtures/materials-recent.csv",
+        "evals/fixtures/completed-titles.csv",
+        "evals/fixtures/recent-published.csv"
+      ],
+      "expectations": [
+        "先处理最近新增素材",
+        "彩虹盐湖按概念族第三次使用淘汰",
+        "没有已验证来源时不输出最终候选",
+        "不要求在结果中单列视觉类型或图片来源字段"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "mode-specific-input-routing",
+      "prompt": "用户只要求把标题‘世界最清澈的5个湖泊’压缩到7字以内，并说明优化理由；没有提供素材库、已做标题或近期已出选题。请完成标题表达优化。",
+      "expected_output": "可以完成表达优化，但必须声明未完成概念级去重、不能直接标主推；不应要求用户先提供三方数据才能分析标题。",
+      "files": [],
+      "expectations": [
+        "按标题优化模式只读取标题手册",
+        "标题不超过7字",
+        "不虚构来源或去重结论",
+        "明确不能直接标主推"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "source-format-and-dual-score",
+      "prompt": "审核两条拟上线旅行选题。甲：质量90、P 8、月报7，来源是裸链接；乙：质量84、P7、月报8，来源为已实际打开的 [已验证] [某地质公园·夏季开放公告](https://geopark.gov.cn/notice/2026-summer)。说明状态与来源格式是否合规。",
+      "expected_output": "甲因来源和月报分失败不能主推；乙因质量总分低于85也不能主推，来源格式合规但最多可用。",
+      "files": [],
+      "expectations": [
+        "主推同时要求质量>=85、P>=7、月报>=8",
+        "拒绝裸URL",
+        "硬门槛不能被高分抵消",
+        "识别乙最多为可用"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "no-fake-verified-source",
+      "prompt": "三条旅行事实均已提供画面描述，但没有提供任何原文链接。请写7字以内标题和25字以内副标题，并说明能否成为最终候选。不得搜索或虚构来源。",
+      "expected_output": "可以给标题表达建议，但不能写已验证占位链接、不能套最终候选格式、不能标主推；应进入待补来源清单。",
+      "files": [],
+      "expectations": [
+        "不生成https://...或example域名",
+        "不虚构已验证状态",
+        "标题与副标题合规",
+        "明确待补来源"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "monthly-report-review-regression",
+      "prompt": "读取 evals/fixtures/202607-travel-report.md，只分析旅行风光板块，按‘数据依据 → 判断 → 结论’回答应增加什么、减少什么。不要把单月信号当永久规律，也不要修改 Skill 文件。",
+      "expected_output": "准确提取合成数据11.11%与18.88%，区分单月信号与稳定规律，并明确普通无题眼风景应减少；不修改 evidence-index。",
+      "files": [
+        "evals/fixtures/202607-travel-report.md"
+      ],
+      "expectations": [
+        "标明数值为合成fixture",
+        "历史冷知识作为解释层",
+        "不更新任何文件",
+        "不要求三方去重数据"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "certainty-and-location-protection",
+      "prompt": "来源只说某湖在特定季节“可能因藻类变化呈粉色”，请生成旅行主推标题，要求写成“粉湖真相大白”。",
+      "expected_output": "拒绝升级确定性；不得写真相大白，保留“可能/或与”并降级，直到来源与画面核验完成。",
+      "files": [],
+      "expectations": [
+        "不把推测写成确认事实",
+        "不使用真相大白",
+        "说明待验证或降级"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "category-routing-bridge",
+      "prompt": "素材重点解释古桥榫卯工艺的审美演变，地点只是背景。请按旅行类出题。",
+      "expected_output": "识别核心是工艺与审美，路由艺术类，不强行生成旅行候选。",
+      "files": [],
+      "expectations": [
+        "路由艺术",
+        "不输出旅行正式候选"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "reject-all-japanese-elements",
+      "prompt": "旅行候选包含日本境内自然景观，标题和图片都很强；请删除国名后保留选题。",
+      "expected_output": "直接淘汰该候选，不得通过删除国名、替换地点称呼或隐藏来源规避日本元素红线。",
+      "files": [],
+      "expectations": [
+        "日本元素一票否决",
+        "不改称规避",
+        "不进入候选池"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "headline-event-hook-regression",
+      "prompt": "把一组旅行标题改得更吸睛。现有标题只是‘红色的海滩’‘金黄的沙漠’‘公路穿过海面’，要求不编造事实、不批量加问号。",
+      "expected_output": "先识别每个对象真实可见的突变、反常动作、状态悬念或季节利益，再给结构不同的短标题；拒绝继续平铺颜色和位置，也不把三个标题套成同一句式。",
+      "files": [],
+      "expectations": [
+        "执行标题事件测试",
+        "保留真实认知缺口",
+        "结构和机制有差异",
+        "不批量套问号"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "urban-landmark-travel-routing",
+      "prompt": "我要先筛一批旅行画报对象，桥梁、摩天轮、空轨和异形建筑也可以，只要首图够反常、能写旅行体验。请判断这些对象应如何筛选；目前没有提供来源、图源和近期上传表，不要写正式可上架候选。",
+      "expected_output": "按封面画面与旅行体验筛选这些对象，不因设施名称直接分流；说明需要实际打开直接来源才可交付已核实选题，当前只可给筛选方向和待补事项，不报分数或主推。",
+      "files": [],
+      "expectations": [
+        "桥梁、摩天轮、空轨和异形建筑可进入旅行初筛",
+        "纯技术性能和工程参数仍另行路由",
+        "无来源时不编造已验证选题或链接",
+        "不套正式候选格式或评分"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "headline-options-with-visual-reveal",
+      "prompt": "星耀樟宜的雨漩涡从机场穹顶落下。原标题‘机场下瀑布’太平，请给几个不同方向的7字以内标题供我挑，不要全部用问号，也不要把修辞说成真的银河。这里只改文字，没有图源和去重回执。",
+      "expected_output": "围绕穹顶落水这一画面给少量不同切口并推荐一个；允许标题不写机场专名，但说明需由首图和副标题揭晓；逐条符合7字及事实边界，只标文字草案。",
+      "files": [],
+      "expectations": [
+        "提供不同机制的备选而非同义词堆叠",
+        "不全部用问号",
+        "不将比喻升级成物理事实",
+        "缺图源与去重时不称主推或可上架"
+      ]
+    }
+  ]
+}

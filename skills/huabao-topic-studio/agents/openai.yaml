@@ -1,0 +1,6 @@
+interface:
+  display_name: "华为画报选题工作室"
+  short_description: "结合AI检索与认可标题机制，高效输出吸睛标题、副标题、论据摘要和信息链接"
+  default_prompt: "使用 $huabao-topic-studio，先读我提供的素材和标题参考，按认可案例的机制比较不同标题切口，可用现有AI或浏览器辅助找对象，核实入选论据，输出标题、副标题、一段有论据的摘要及真实原文链接。普通找题使用本地规范，图片精查在选定后的制作阶段完成。"
+policy:
+  allow_implicit_invocation: true

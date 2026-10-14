@@ -1,0 +1,4 @@
+interface:
+  display_name: "旅行标题优化助手"
+  short_description: "按参考风格优化中文旅行、风光、地理与建筑内容标题"
+  default_prompt: "使用 $travel-headline-refiner 优化这组旅行风光标题，检查疑问句标点和事实核验状态，并按任务类型输出结果。"
